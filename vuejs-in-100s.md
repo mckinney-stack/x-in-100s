@@ -2,7 +2,7 @@
 
 Vue.js is a JavaScript framework for building UIs.
 
-The creator refers to Vue.js as a "progressive framework" - meaning it can start small and scale up as large as needed.
+The creator (Evan You) refers to Vue.js as a "progressive framework" - meaning it can start small and scale up as large as needed.
 
 It has the smallest learning curve compared to React and Angular. 
 
