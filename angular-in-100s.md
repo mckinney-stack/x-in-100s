@@ -84,6 +84,6 @@ Now, any component that wants to use this state or logic, can simply add this cl
 
 ![alt text](images/{D1A0159C-4A3C-4FFF-AC09-BFE4C7F5DCFB}.png)
 
-The end result is a simple and reliable way to compose comlex applications.
+The end result is a simple and reliable way to compose complex applications.
 
 As a developer, you can always count on a consistent experience between projects - and minimal decision fatigue.
