@@ -6,7 +6,7 @@ An Application Programming Interface (API) is a way for 2 computers to talk to e
 
 Using an API is just like using a website in your browser, but instead of clicking on buttons and filling out forms, you write code to explicitly request data from a server. 
 
-![alt text]({184EEB04-8AB6-4FB6-AAA5-3ED842EEF5E7}.png)
+![alt text](images/{184EEB04-8AB6-4FB6-AAA5-3ED842EEF5E7}.png)
 
 For example, we could visit the NASA website to look at asteroids, OR we could use their REST API to request the raw JSON data that's shown on the screen.
 
