@@ -162,5 +162,30 @@ That means we can extend a class with additional functions if we want to, howeve
 
 ![alt text](images/{69C35C12-4E27-4756-805B-DBB3005D2E46}.png)
 
+Imagine you're running a hot dog stand and when a customer places an order they need to tell you everything they want on the sandwich in a `constructor`.
+
+ ![alt text](images/{E82E3940-8A9B-4953-88E7-CD0A567A42B2}.png)
+
+ That works, but it's kind of hard to keep track of all these options and we may want to defer each step to a later point.
+
+ With the **builder** pattern, we create the object step-by-step using `methods`, rather than the `constructor`. And we can even delegate the building logic to an entirely different class.
+
+ ![alt text](images/{8867533E-4B03-4AF1-870A-34E1B4E9446C}.png)
+
+ In JS, we'd have each method return `this`, which is a reference to the object instance. 
+
+ ![alt text](images/{E1EC0A81-C1C8-4F61-B92E-A80DDB5BCA3C}.png)
+
+ That allows us to implement method chaining, where we instantiate an object, then chain methods to it, but always get the object as the return value. 
+
+ ![alt text](images/{91C7933D-CE90-44A8-B608-103EE9623354}.png)
+
+ You'll come across this pattern frequently with libraries like jQuery - although its gone out of style in recent years! 
+
+ <br><br>
 
 
+
+ ### Pattern 4: **Factory**
+
+ to be continued...
