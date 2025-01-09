@@ -1,4 +1,4 @@
-# Nest.js in 100 Seconds
+# NestJS in 100 Seconds
 
 **NestJS** is a **Node.js** framework for building scalable, server-side applications with TypeScript. 
 
