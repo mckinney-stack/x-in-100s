@@ -50,8 +50,72 @@ In the `src` directory, you'll notice a "controller", which is a fundamental bui
 
 ![alt text](images/{919FF6C6-31BB-4456-B244-09ED4D9F4EF4}.png)
 
-It's responsible for handling incoming HTTP requests and returning responses back to the client. 
+It's responsible for **handling incoming HTTP requests** and **returning responses back to the client.** 
 
 ![alt text](images/{99043529-22D7-41BB-98BB-76A4C8A17094}.png)
 
-Continue from 55 seconds....
+To implement a controller, simply add the `@Controller` decorator to a class. Then, inside the class, you can implement methods and decorate them with **HTTP verbs** like: 
+
+- `@Get`
+- `@Put`
+- `@Post`
+- `@Patch`
+
+<br>
+
+![alt text](images/{1AD8EB63-E330-4886-BD9A-38DCBED48895}.png)
+
+By default, this will create a HTTP endpoint on the root URL, but you can also pass a **string** to the decorator to change the route, or implement dynamic route parameters:
+
+![alt text](images/{315D205D-4B57-45EE-A7F2-88324F281B2A}.png)
+
+In addition, nestJS provides other decorators to control things like the **status code** and **headers**:
+
+![alt text](images/{B5691B8E-122B-4B31-8287-2AD422EC3368}.png)
+
+![alt text](images/{DD35030C-00B7-48A0-B5A0-265BF2C01AD7}.png)
+
+Then in the method itself, parameter decorators can be used to access the **request** parameters or body:
+
+![alt text](images/{84325023-7BCD-42A8-8FDC-4DB7F0DBB089}.png)
+
+Finally, the return value from the method is the response **body** that gets sent back down to the client:
+
+![alt text](images/{F8988B0E-8646-48EE-B077-42BF4459B0CB}.png)
+
+<br><br>
+
+### Generate more controllers with the CLI
+
+What's awesome about nest is that you can use the CLI to automatically generate more controllers - to keep your code organized as it grows in complexity. 
+
+![alt text](images/{64FE63B5-527D-4349-8507-A76EB085DFD7}.png)
+
+<br><br>
+
+### NestJS Providers
+
+There's more the Nest than just controllers. A *provider* is `class` that contains shared logic throughout the entire application - and can be injected as a dependency where needed.
+
+![alt text](images/{311AC52B-DD6B-4EA8-867D-EE844C68F107}.png)
+
+Any class with the `@injectable` decorator can be injected in the constructor of another class.
+
+![alt text](images/{2B2630A7-8ED9-4052-B3B0-489A58940A01}.png)
+
+For example, a provider can be implemented as a guard to handle role-based user authentication. 
+
+![alt text](images/{E1EFD399-8C55-4153-8957-F29475C4BDCC}.png)
+
+Or, it might be implemented as a pipe to efficiently validate and transform values in a controller. 
+
+![alt text](images/{0800C1A2-EC1B-4C90-936D-26478D354831}.png)
+
+<br><br>
+
+### The `@Module` decorator
+
+Lastly, we have the `@Module` decorator, which allows code to be organized into smaller chunks, where it can be lazy-loaded to run faster in serverless environments.
+
+![alt text](images/{6900F75C-34CE-47F5-AE33-52D870B51271}.png)
+
