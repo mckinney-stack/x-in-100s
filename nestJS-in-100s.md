@@ -1,6 +1,6 @@
 # Nest.js in 100 Seconds
 
-**NestJS** is a node.js framework for building scalable, server-side applications with TypeScript. 
+**NestJS** is a **Node.js** framework for building scalable, server-side applications with TypeScript. 
 
 ![alt text](images/{7953A145-C8D8-4887-8F1C-B920B8DFE875}.png)
 
@@ -95,7 +95,7 @@ What's awesome about nest is that you can use the CLI to automatically generate 
 
 ### NestJS Providers
 
-There's more the Nest than just controllers. A *provider* is `class` that contains shared logic throughout the entire application - and can be injected as a dependency where needed.
+There's more to Nest than just controllers. A *provider* is `class` that contains shared logic throughout the entire application - and can be injected as a dependency where needed.
 
 ![alt text](images/{311AC52B-DD6B-4EA8-867D-EE844C68F107}.png)
 
