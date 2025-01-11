@@ -10,7 +10,7 @@ This course is a project-based learning course, building a real estate / propert
 
 <br>
 
-### Overview of Next.js from Fireship...
+### Next.js in 100s...
 
 Traditional React apps are rendered on the client-side.
 
