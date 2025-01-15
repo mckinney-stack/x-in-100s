@@ -66,11 +66,11 @@ The image is **immutable**, and it can be used to spin up multiple containers, w
 
 Create a docker file and use `FROM` to start from an existing template like ubuntu. 
 
-![alt text]({DABBCE39-3DE8-47CF-9C75-A938DE2987DD}.png)
+![alt text](images/{DABBCE39-3DE8-47CF-9C75-A938DE2987DD}.png)
 
 This base image gets pulled down from the cloud, and you can also upload your own images to a variety of different docker registries. 
 
-![alt text]({852CD949-0F2C-4EE0-A5E8-01E324F7B54E}.png)
+![alt text](images/{852CD949-0F2C-4EE0-A5E8-01E324F7B54E}.png)
 
 <br>
 
@@ -78,7 +78,7 @@ This base image gets pulled down from the cloud, and you can also upload your ow
 
 From there, you might want to use `RUN` to run a terminal command that installs dependencies into your image. 
 
-![alt text]({94274763-1C0A-452F-98BC-27160CCF39E7}.png)
+![alt text](images/{94274763-1C0A-452F-98BC-27160CCF39E7}.png)
 
 <br>
 
@@ -86,14 +86,14 @@ From there, you might want to use `RUN` to run a terminal command that installs 
 
 You can set environment variables and do all kinds of other stuff. 
 
-![alt text]({15665CD5-F2B8-40B0-9518-3860367BF39F}.png)
+![alt text](images/{15665CD5-F2B8-40B0-9518-3860367BF39F}.png)
 
 
 ### CMD 
 
 The last thing you'll do is set a default command `CMD` that's executed when you start up a container.
 
-![alt text]({BDF82976-B552-4FDF-9EDB-01818C08219A}.png)
+![alt text](images/{BDF82976-B552-4FDF-9EDB-01818C08219A}.png)
 
 <br>
 
@@ -101,17 +101,17 @@ The last thing you'll do is set a default command `CMD` that's executed when you
 
 Then you can create the image file, by running the `docker build` command. It goes through each step in our docker file to build the image layer by layer. 
 
-![alt text]({9061E48D-39EA-4CE1-8B32-7B9CA4C54876}.png)
+![alt text](images/{9061E48D-39EA-4CE1-8B32-7B9CA4C54876}.png)
 
 ### `docker run` command
 
 We can then bring this image to life as a container with the `docker run` command. 
 
-![alt text]({8C0D668D-C59A-4EBC-8E5A-A2C799625244}.png)
+![alt text](images/{8C0D668D-C59A-4EBC-8E5A-A2C799625244}.png)
 
 <br>
 
 As your app demands more resources you can run it on multiple machines, multiple clouds, on-premises (installed on own hardware) - or wherever you want reliably. 
 
-![alt text]({AF5362ED-7E2C-4D3B-8576-87F5583074F9}.png)
+![alt text](images/{AF5362ED-7E2C-4D3B-8576-87F5583074F9}.png)
 
