@@ -188,4 +188,79 @@ Imagine you're running a hot dog stand and when a customer places an order they 
 
  ### Pattern 4: **Factory**
 
- to be continued...
+ ![alt text](images/{0496C1BD-A3B9-4BBA-94FB-2C255E0AA1A3}.png)
+
+ ![alt text](images/{F39A1F14-4D3C-4F3B-8CA0-A394BD8A8AFB}.png)
+
+ With factory, instead of using the `new` keyword to instantiate an object, you use a function or a method to do it for you. 
+
+ Let's imagine we're building a cross-platform app that runs on both iOS and Android. They both have the same interface, but in our code we're doing a bunch of conditional checking to determine which button to show. 
+
+ ![alt text](images/{2B56B56B-F170-4243-B0E8-74418C70FDB4}.png)
+
+ That's not very maintainable! Instead, we can create a sub-class or function that will determine which object to instantiate. 
+
+ Now, instead of repeating the same logic, we use the factory to determine which button should be rendered. 
+
+ ![alt text](images/{84E8098A-7E0F-4083-A961-839E082AC113}.png)
+
+ ![alt text](images/{3002DEA1-5F6F-4D65-B1AF-EBA9F607B153}.png)
+
+ <br>
+
+ ### Pattern 5: **Facade**
+
+ ![alt text](images/{DB0964A1-F659-41DB-9C80-1BCBC2EF22CE}.png)
+
+ ![alt text](images/{8FCE3970-624F-495D-99C9-FD9C4F3CB0E7}.png)
+
+ A facade is the face of a building. Inside that building there's all kinds of shenanigans, corruption and complexity that the end user doesn't need to know about. 
+ 
+ In programming, a facade is basically just a simplified API to hide other low-level details in your code base. 
+
+ Let's imagine we have classes for the plumbing system and electrical system. Inside of them we have all kinds of complex stuff going on - like pressure and voltage. 
+
+![alt text](images/{56F1B3D8-1F22-42BF-9109-99B49A4ABC07}.png)
+
+The people living in the house don't need access to all these low-level details, so we create a *facade* class that contains the low-level systems as dependencies, but then simplifies their operation. 
+
+![alt text](images/{86D161DA-89D5-425C-9265-BBD72359D8CB}.png)
+
+We might combine all of the electrical and plumbing details into a single method...
+
+![alt text](images/{15B54392-23ED-4883-92EC-A65B6C190BA6}.png)
+
+...so that the end user can simply turn them on or off with a single method. 
+
+![alt text](images/{82DA8AF2-EAC5-49D3-BCDC-BA8B6CD6C177}.png)
+
+Almost every package that you install with JavaScript could be considered a facade in some way, like **jQuery** is a great example of a facade for the more annoying, low-level JavaScript features.
+
+![alt text](images/{74864E99-40D6-4FA6-8436-EC2764596F71}.png)
+
+<br>
+
+### Pattern 6: **Proxy**
+
+![alt text](images/{47F4A82D-C511-42BC-BB4A-12B8320110A2}.png)
+
+![alt text](images/{4AB3126B-3EDB-4FBB-A5BB-3CE92E89E46F}.png)
+
+Proxy is just a fancy word for substitute. Like in school you might have a substitute teacher to replace the real thing. In programming, you can replace a target object with a proxy.
+
+![alt text](images/{3C696BC3-9A75-427E-AFB6-F2F756E63B4F}.png)
+
+But why would you ever want to do that?
+
+A great case study is the reactivity system in Vue.js
+
+![alt text](images/{8FD560F1-055C-4285-A585-C10FD9FCE6BA}.png)
+
+In Vue you create data, but the framework itself needs a way to intercept that data and update the UI whenever that data changes. 
+
+The way Vue handles that is by replacing the original object with a proxy. 
+
+![alt text](images/{6BBDBD10-4B81-4CD9-81CB-A2D2FCE04AD6}.png)
+
+A proxy takes the original object as the first argument, then a handler as the 2nd argument. Inside of which we can override methods like `get()` and `set()`, which allows us to run code whenever a property is accessed on the object, or changed. 
+
