@@ -332,3 +332,86 @@ In most cases though, you'll likely want more fine-grained control over that beh
 
 ![alt text](images/{A22120D4-07BE-440E-B0A5-986506FCA68C}.png)
 
+If you build a reusable component library in React, you may need to get access to the underlying DOM element and then forward it - so it can be accessed by the consumers of your component library. 
+
+![alt text](images/{3B9CB800-780B-4059-9AC7-BD4AF48648B6}.png)
+
+- You can access a native DOM element with the `useRef` hook
+- Then you can wrap the component in `forwardRef`
+- This makes that ref available when someone uses this component
+<br><br>
+- `useImperativeHandle` comes in if you want to change the behaviour of the exposed ref
+- you may want to modify the methods on the native element
+
+![alt text](images/{C88FDF11-99C7-4888-870F-EF0A4A1B91A4}.png)
+
+- In reality, the need for this hook is probably pretty rare
+
+
+<br><br>
+
+![alt text](images/{630EA951-B451-4CDD-8E5A-89C39DEF3065}.png)
+
+- another rarely used hook
+- works just like `useEffect`
+- with one small difference:
+    - your callback will run after rendering the component, but before painting to screen
+    - means React will wait for your code to finish running before it updates the UI for the end user
+
+![alt text](images/{E36B5F78-76C2-41E2-8CA4-902F4C4BC729}.png)
+
+- there may be situations where you need to calculate a scroll position - or something else in the UI - before the DOM is visually updated
+
+<br><br>
+
+![alt text](images/{2D432042-3902-4A52-BC80-C235E8B0252D}.png)
+
+This hook won't make sense until you start building your own custom hooks.
+
+
+- If you open app in browser and open React dev tools
+- You'll notice that every component in the tree will tell you a little bit about the **hooks** that are defined there
+
+![alt text](images/{39022785-0A0A-4D10-986A-CB1EFA8AF37A}.png)
+
+- The purpose of `useDebugValue` is to make it possible to define your own custom labels here in **React Dev Tools**
+- we can build a custom hook to see that in action
+
+### Building a custom hook:
+
+![alt text](images/{83475D47-6711-41A5-AB37-6B908AD22874}.png)
+
+- notice how the above component is using **two** hooks together - `useState` and `useEffect`
+    - `useState` to define a display name for the user
+    - `useEffect` to **fetch** that name from the database on the first render
+
+<br>
+
+### Define custom hook to handle this! 
+
+- imagine we have **ten** *other* components that need to implement the *exact same logic*
+- the great thing about hooks is we can easily do that by defining our own function called `useDisplayName`
+- it's just a regular JS function that implements the same code we had in our component
+
+![alt text](images/{251EFF94-6816-4373-9A8F-177D283EF4AA}.png)
+
+- we can now put this custom hook to use in multiple components
+
+![alt text](images/{3D49B646-7351-4898-B65B-A316CC717842}.png)
+
+<br>
+
+### Add `useDebugValue`
+
+One final touch here is to add `useDebugValue` to our custom hook.
+
+- the argument passed to `useDebugValue` will be the value shown in React dev tools
+
+![alt text](images/{50F82870-A9FC-4E0C-B214-BE8D38BCC4E3}.png)
+
+- As you can see below:
+    - it shows the `displayName` label
+    - along with the value - `"bob"`
+    - as well as a breakdown of the primitive hooks that went into this custom hook
+
+![alt text](images/{02D33D0D-6325-4524-A88E-93A03B0CC253}.png)
